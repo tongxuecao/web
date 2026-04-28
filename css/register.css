@@ -1,0 +1,288 @@
+/* ===== 页面整体 ===== */
+body {
+  background-color: #e8f4fc;   /* 浅蓝色背景 */
+  margin: 0;
+  padding: 40px;
+  font-family: "微软雅黑", sans-serif;
+  
+  background-image: url('https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=1920&q=80');
+  background-size: cover;       /* 图片铺满整个屏幕 */
+  background-attachment: fixed; /* 滚动页面时背景不动，有视差感 */
+}
+
+/* ===== 标题 ===== */
+.register-title {
+  text-align: center;
+  color: #2a7ab8;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #b0d4ee;
+  margin-bottom: 24px;
+}
+
+/* ===== 表单卡片 ===== */
+.register-container {
+  background-color:rgb(255,255,255,0.85);
+  max-width: 500px;
+  margin: 0 auto;          /* 水平居中 */
+  padding: 32px;
+  border-radius: 16px;     /* 圆角，和 home 风格一致 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+}
+
+/* ===== 表格布局 ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;   /* 去掉单元格间距 */
+}
+
+tr {
+  margin-bottom: 12px;
+}
+
+td {
+  padding: 8px 6px;
+  vertical-align: middle;     /* 单元格内容垂直居中 */
+  color: #333;
+}
+
+/* 左侧标签列固定宽度 */
+td:first-child {/*选中作为其父元素（通常是 <tr> 行）中第一个子元素的 <td> 单元格。这意味着在每一行中，只有该行的第一个数据单元格会被应用下面的样式。 */
+  width: 80px;
+  color: #555;
+  white-space: nowrap;        /* 不换行 */
+}
+
+/* ===== 输入框 ===== */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #b0d4ee;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;              /* 去掉默认蓝框 */
+  transition: border-color 0.3s;
+}
+
+/* 输入框获得焦点时边框变蓝 */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+  border-color: #2a7ab8;
+}
+
+/* ===== 下拉框 ===== */
+select {
+  padding: 8px 12px;
+  border: 1px solid #b0d4ee;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  background-color: white;
+  
+}
+
+/* ===== 多行文本框 ===== */
+textarea {
+  width: 100%;
+  height: 80px;
+  padding: 8px 12px;
+  border: 1px solid #b0d4ee;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  resize: vertical;           /* 只允许上下拖动调整大小 */
+  transition: border-color 0.3s;
+}
+
+textarea:focus {
+  border-color: #2a7ab8;
+}
+
+/* ===== 单选/复选框的文字标签 ===== */
+.radio-label,
+.checkbox-label {
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+/* ===== 按钮组 ===== */
+.btn-group {
+  display: flex;
+  justify-content: center;    /* 两个按钮居中 */
+  gap: 16px;
+  margin-top: 8px;
+}
+
+/* 注册按钮 */
+.submit-btn {
+  padding: 10px 32px;
+  background-color: #2a7ab8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #1a5f96;
+  transform: translateY(-2px);   /* 和 home 一样，悬停时上移 */
+}
+
+/* 重置按钮 */
+.reset-btn {
+  padding: 10px 32px;
+  background-color: white;
+  color: #2a7ab8;
+  border: 1px solid #2a7ab8;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.reset-btn:hover {
+  background-color: #e8f4fc;
+  transform: translateY(-2px);
+}
+a {
+  text-decoration: none;
+  color: rgb(126, 162, 215);
+}
+.register-link {
+	text-align: center;
+}
+/* ===== 用户协议样式 ===== */
+.agreement-cell {
+  padding: 12px 0 8px 0;
+  text-align: center;
+}
+
+.agreement-label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #333;
+  gap: 6px;
+}
+
+.agreement-label input[type="checkbox"] {
+  margin: 0;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+.agreement-label a {
+  color: #2a7ab8;
+  text-decoration: none;
+}
+
+.agreement-label a:hover {
+  text-decoration: underline;
+  color: #1a5f96;
+}
+
+/* ===== 验证码样式 ===== */
+.captcha-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+#captchaInput {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #b0d4ee;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s;
+  min-width: 120px;
+}
+
+#captchaInput:focus {
+  border-color: #2a7ab8;
+}
+
+.captcha-display {
+  width: 100px;
+  height: 40px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+  border: 1px solid #b0d4ee;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', monospace;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: #2a7ab8;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.captcha-display:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(42, 122, 184, 0.2);
+}
+
+.refresh-captcha {
+  padding: 8px 16px;
+  background-color: white;
+  color: #2a7ab8;
+  border: 1px solid #2a7ab8;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.refresh-captcha:hover {
+  background-color: #e8f4fc;
+  transform: translateY(-1px);
+}
+
+/* ===== 输入验证错误样式 ===== */
+.error-message {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  display: none;
+}
+
+.input-error {
+  border-color: #e74c3c !important;
+}
+
+.input-success {
+  border-color: #2ecc71 !important;
+}
+
+/* 禁用状态下的注册按钮 */
+.submit-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.submit-btn:disabled:hover {
+  background-color: #cccccc;
+  transform: none !important;
+}

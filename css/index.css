@@ -1,0 +1,109 @@
+/* ===== 页面整体 ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "微软雅黑", sans-serif;
+  background-color: #e8f4fc;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;           /* 占满整个屏幕高度 */
+}
+
+/* ===== 头部 ===== */
+header {
+  background-color: #2a7ab8;
+  color: white;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 头部标题（包含企鹅图片和文字） */
+header h1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.4rem;
+}
+
+/* 企鹅头像：圆形小图 */
+.qieimage {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;          /* 圆形 */
+  border: 2px solid white;     /* 白色边框 */
+  object-fit: cover;
+}
+
+/* 副标题文字 */
+header p {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-left: auto;           /* 推到最右边 */
+}
+
+/* ===== 导航栏 ===== */
+nav {
+  background-color: #1a5f96;   /* 比 header 深一点 */
+  padding: 0 32px;
+}
+
+/* 去掉列表默认样式 */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 4px;
+}
+
+/* 每个导航项 */
+nav ul li a {
+  display: block;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  border-radius: 4px 4px 0 0;  /* 只有上方两个角是圆的 */
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* 悬停时高亮 */
+nav ul li a:hover {
+  background-color: #2a7ab8;
+  color: white;
+}
+
+/* ===== iframe 内嵌区域 ===== */
+iframe {
+  flex: 1;                     /* 占满剩余高度 */
+  width: 100%;
+  border: none;                /* 去掉默认边框 */
+  background-color: #e8f4fc;
+}
+.header-time {
+  flex: 1;
+  display: flex;
+  flex-direction: column;  /* 时间和日期上下排列 */
+  align-items: center;     /* 水平居中 */
+  justify-content: center; /* 垂直居中 */
+}
+
+#time {
+  font-size: 1.4rem;
+  font-family: "Courier New", monospace;
+  color: white;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+}
+
+#date {
+  font-size: 0.82rem;
+  font-family: "Courier New", monospace;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.08em;
+}

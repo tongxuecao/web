@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+<body>
+<main>
+    <div class="section-resume">
+        <a href="son/resume.html"><h2>个人简历</h2></a>
+    </div>
+    <div class="section-dream">
+        <a href="son/dream.html"><h2>我的理想</h2></a>
+    </div>
+    <div class="section-life">
+        <a href="son/life.html"><h2>我的生活</h2></a>
+    </div>
+    <div class="section-self-blog">
+        <a href="son/self-blog.html"><h2>个人博客</h2></a>
+    </div>
+    <div id="pay">
+  <span class="pay-text">打赏收款码</span>
+  <img class="pay-img" src="../images/收款码.png" alt="收款码">
+</div>
+</main>
+
+<footer>&copy;2026 我的网站</footer>
+
+<script>
+// 页面加载后给四个链接加点击校验
+document.addEventListener('DOMContentLoaded', function() {
+    let links = document.querySelectorAll('.section-self-blog');
+    
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            let isLogin = localStorage.getItem('isLogin');
+            
+            if (!isLogin) {
+                e.preventDefault(); // 阻止跳转
+                alert('请先登录！');
+                window.location.href = '../website/login.html';
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>

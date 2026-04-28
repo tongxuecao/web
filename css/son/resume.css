@@ -1,0 +1,97 @@
+/* ===== 页面整体 ===== */
+body {
+  background-color: #e8f4fc;
+  margin: 0;
+  padding: 40px;
+  font-family: "微软雅黑", sans-serif;
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+  background-image: url('../../images/高铁.jpg'); /* 替换成你的图片路径 */
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* ===== 容器 ===== */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  max-width: 60vw;
+}
+
+/* ===== 每个盒子 ===== */
+main > div {
+  width: 23vw;
+  height: 30vw;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  /* 让标题和内容上下排列，并垂直居中 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+/* ===== 悬停：盒子放大 ===== */
+main > div:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+/* ===== 标题 ===== */
+main > div h2 {
+  color: white;
+  font-size: 1.6rem;/*rem（Root EM）是相对于根元素（<html> 标签）字体大小的相对单位 */
+  letter-spacing: 0.1em;
+  margin: 0 0 12px 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  margin-top: 40px;    /* 距离顶部的距离 */
+  margin-bottom: 12px; /* 距离下方内容的距离 */
+}
+
+/* ===== 内容区域：默认隐藏 ===== */
+.card-content {
+  opacity: 0;             /* 完全透明，看不见 */
+  transition: opacity 0.3s;  /* 显示时有淡入动画 */
+  text-align: left;
+}
+
+.card-content p {
+  color: white;
+  margin: 6px 0;
+  font-size: 0.95rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== 悬停时内容淡入显示 ===== */
+main > div:hover .card-content {
+  opacity: 1;
+}
+
+/* ===== 四个盒子颜色 ===== */
+.section-resume    { background-color: rgba(42, 122, 184, 0.8); }
+.section-dream     { background-color: rgba(58, 154, 217, 0.8); }
+.section-life      { background-color: rgba(77, 184, 200, 0.8); }
+.section-self-blog { background-color: rgba(91, 196, 176, 0.8); }
+/* 图片自适应父盒子，不超出边界 */
+#person-wechat {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;       /* 按比例裁剪，不变形 */
+  border-radius: 8px;      /* 小圆角，好看一点 */
+  margin-top: 8px;         /* 和上方文字留点间距 */
+  display: block;          /* 独占一行，不和文字并排 */
+  margin-left: auto;       /* 配合下一行实现居中 */
+  margin-right: auto;
+}

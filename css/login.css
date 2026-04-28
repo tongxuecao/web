@@ -1,0 +1,128 @@
+/* ===== 页面整体 ===== */
+body {
+  background-color: rgba(255, 255, 255, 0.5); /* 白色半透明，能透出背景图 */
+  margin: 0;
+  padding: 40px;
+  font-family: "微软雅黑", sans-serif;
+
+  /* 让登录卡片垂直居中 */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+  background-image: url('https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=1920&q=80');
+  background-size: cover;       /* 图片铺满整个屏幕 */
+  background-attachment: fixed; /* 滚动页面时背景不动，有视差感 */
+}
+
+
+/* ===== 登录卡片 ===== */
+.login-container {
+  background-color: rgba(255, 255, 255, 0.85); /* 白色半透明，能透出背景图 */
+  width: 400px;
+  padding: 36px;
+  border-radius: 16px;           /* 圆角，和注册页一致 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+ 
+}
+
+/* ===== 标题 ===== */
+.login-title {
+  text-align: center;
+  color: #2a7ab8;
+  font-size: 1.5rem;
+  margin: 0 0 8px 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #b0d4ee;
+  margin-bottom: 24px;
+}
+
+/* ===== 表格 ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 10px 6px;
+  vertical-align: middle;
+  color: #555;
+}
+
+/* 左侧文字列固定宽度 */
+td:first-child {
+  width: 70px;
+  white-space: nowrap;
+}
+
+/* ===== 输入框 ===== */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #b0d4ee;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+/* 点击输入框时边框变蓝 */
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #2a7ab8;
+}
+
+/* ===== 按钮组 ===== */
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+/* 登录按钮 */
+.submit-btn {
+  padding: 10px 36px;
+  background-color: #2a7ab8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #1a5f96;
+  transform: translateY(-2px);
+}
+
+/* 重置按钮 */
+.reset-btn {
+  padding: 10px 36px;
+  background-color: white;
+  color: #2a7ab8;
+  border: 1px solid #2a7ab8;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.reset-btn:hover {
+  background-color: #e8f4fc;
+  transform: translateY(-2px);
+}
+a {
+  text-decoration: none;
+  color: rgb(126, 162, 215);
+}
+.bt,.register-link {
+	text-align: center;
+}

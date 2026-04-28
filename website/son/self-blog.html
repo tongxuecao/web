@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>个人博客</title>
+  <link rel="stylesheet" href="../../css/son/self-blog.css">
+  <style>
+    /* 退出按钮样式 */
+    .logout-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 8px 16px;
+      background-color: #ff4444;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.2s;
+    }
+    .logout-btn:hover {
+      background-color: #cc0000;
+    }
+  </style>
+</head>
+<body>
+  <div id="pay">
+  <span class="pay-text">打赏收款码</span>
+  <img class="pay-img" src="../../images/收款码.png" alt="收款码">
+</div>
+  <!-- 新增退出登录按钮 -->
+  <button class="logout-btn" id="logoutBtn">退出登录</button>
+
+  <div class="blog-container">
+    <div class="blog-header">
+      <h2 class="blog-title">个人博客</h2>
+      <p class="blog-subtitle">记录我设计这个网站的过程与思考</p>
+    </div>
+    <!-- 博客文章1 -->
+    <div class="blog-card">
+      <div class="blog-meta">
+        <span class="blog-date">2026-3-12</span>
+        <span class="blog-tag">起步</span>
+      </div>
+      <h3>为什么要做这个网站？</h3>
+      <p>
+        刚开始学习 HTML 和 CSS 的时候，老师布置了一个作业：做一个个人网站。
+        一开始觉得挺难的，不知道从哪里下手。后来决定先把结构想清楚，
+        再一页一页地写，慢慢就做出来了。
+      </p>
+      <p>
+        这个网站包含了首页、登录、注册、简历、照片墙、博客和关于页面，
+        涵盖了大部分 HTML 基础标签的使用场景，算是一次比较完整的练习。
+      </p>
+    </div>
+
+    <!-- 博客文章2 -->
+    <div class="blog-card">
+      <div class="blog-meta">
+        <span class="blog-date">2026-3-13</span>
+        <span class="blog-tag">布局</span>
+      </div>
+      <h3>Flex 布局让我少走了很多弯路</h3>
+      <p>
+        在做首页四栏卡片的时候，我一开始用 <strong>float</strong> 来排列，
+        结果出现了各种奇怪的问题，元素塌陷、对不齐……
+        后来改用 <strong>Flex 弹性布局</strong>，只需要三行代码就解决了：
+      </p>
+      <div class="code-block">
+        <p>display: flex;</p>
+        <p>gap: 20px;</p>
+        <p>flex: 1;</p>
+      </div>
+      <p>
+        Flex 是目前最主流的 CSS 布局方式之一，几乎所有现代网站都在用。
+        另一个主流方案是 <strong>Grid 网格布局</strong>，适合更复杂的二维排列，
+        是我下一步想学习的内容。
+      </p>
+    </div>
+
+    <!-- 博客文章3 -->
+    <div class="blog-card">
+      <div class="blog-meta">
+        <span class="blog-date">2026-3-15</span>
+        <span class="blog-tag">交互</span>
+      </div>
+      <h3>用 CSS 就能做交互，不一定需要 JavaScript</h3>
+      <p>
+        做简历页的时候，我想实现"鼠标放上去才显示内容"的效果。
+        本以为需要写 JavaScript，后来发现只用 CSS 的 <strong>:hover 伪类</strong>
+        配合 <strong>opacity</strong> 就能实现，而且还带了淡入动画：
+      </p>
+      <div class="code-block">
+        <p>.card-content &#123; opacity: 0; transition: opacity 0.3s; &#125;</p>
+        <p>div:hover .card-content &#123; opacity: 1; &#125;</p>
+      </div>
+      <p>
+        这让我意识到，CSS 其实比想象中强大很多。
+        现代 CSS 还支持自定义变量、动画关键帧（@keyframes）、媒体查询等高级特性，
+        有很大的探索空间。
+      </p>
+    </div>
+
+    <!-- 博客文章4 -->
+    <div class="blog-card">
+      <div class="blog-meta">
+        <span class="blog-date">2026-3-18</span>
+        <span class="blog-tag">技术展望</span>
+      </div>
+      <h3>接下来想学的技术</h3>
+      <p>做完这个网站，我列了一个接下来想学习的技术清单：</p>
+      <ul>
+        <li><strong>JavaScript</strong>：让页面真正"动"起来，实现更复杂的交互逻辑</li>
+        <li><strong>Vue / React</strong>：目前最主流的前端框架，适合开发大型单页应用</li>
+        <li><strong>Node.js</strong>：用 JavaScript 写后端，实现登录注册的真实数据存储</li>
+        <li><strong>MySQL</strong>：数据库基础，配合后端存储用户信息</li>
+        <li><strong>Git</strong>：版本控制工具，管理代码历史，方便团队协作</li>
+        <li><strong>响应式设计</strong>：让网站在手机和平板上也好看，深入学习媒体查询</li>
+      </ul>
+    </div>
+
+    <!-- 博客文章5 -->
+    <div class="blog-card">
+      <div class="blog-meta">
+        <span class="blog-date">2026-3-20</span>
+        <span class="blog-tag">总结</span>
+      </div>
+      <h3>一周学 CSS 的感受</h3>
+      <p>
+        学了一周 CSS，最大的感受是：<strong>动手做比反复看教程有用得多。</strong>
+        很多属性光看文字描述根本记不住，但是自己改一改数值、看看效果，
+        马上就明白是怎么回事了。
+      </p>
+      <p>
+        推荐几个学习过程中用到的工具和网站：
+      </p>
+      <ul>
+        <li><strong>MDN Web Docs</strong>：最权威的 HTML / CSS 参考文档</li>
+        <li><strong>VS Code</strong>：写代码用的编辑器，配合 Live Server 插件实时预览</li>
+        <li><strong>浏览器开发者工具（F12）</strong>：调试 CSS 必备，可以直接在浏览器里改样式</li>
+        <li><strong>Can I Use</strong>：查某个 CSS 属性的浏览器兼容性</li>
+      </ul>
+    </div>
+
+    <p class="blog-footer">&copy;2026 我的个人博客 · 持续更新中…</p>
+  </div>
+
+  <script>
+    // 1. 页面加载时校验登录状态（防止直接访问）
+    document.addEventListener('DOMContentLoaded', function() {
+      let isLogin = localStorage.getItem('isLogin');
+      if (!isLogin) {
+        alert('请先登录后再访问个人博客！');
+        window.location.href = '../../website/login.html'; // 跳转到登录页
+      }
+    });
+
+    // 2. 退出登录功能
+    document.getElementById('logoutBtn').addEventListener('click', function() {
+      // 清除登录状态
+      localStorage.removeItem('isLogin');
+      alert('已成功退出登录！即将返回首页');
+      // 跳转到首页
+      window.location.href = '../../website/home.html';
+    });
+  </script>
+</body>
+</html>

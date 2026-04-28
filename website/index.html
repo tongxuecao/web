@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>个人网站</title>
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <!--网站头部-->
+    <header >
+        <h1><img class="qieimage" src="../images/企鹅.jpg" alt="企鹅">个人网站</h1>
+        <div class="header-time" id="clock">
+            <div id="time">00:00:00</div>
+            <div id="date">0000-00-00</div>
+        </div>
+        <p>专注编程学习与分享</p>
+    </header>
+      <!-- 导航栏 -->
+    <nav>
+        <ul>
+            <li><a href="home.html" target="inner-frame">首页</a></li>
+            <li><a href="about.html" target="inner-frame">关于</a></li>
+            <li><a href="login.html" target="inner-frame">登录</a></li>
+            <li><a href="register.html" target="inner-frame">注册</a></li>
+        </ul>
+    </nav>
+    <iframe src="home.html" title="内嵌页面保证导航可以在任意界面点击" name="inner-frame"></iframe>
+    <script>
+    function updateClock() {
+    var now = new Date();
+    // 时间
+    var h = String(now.getHours()).padStart(2, '0');
+    var m = String(now.getMinutes()).padStart(2, '0');
+    var s = String(now.getSeconds()).padStart(2, '0');
+    document.getElementById('time').innerText = h + ':' + m + ':' + s;
+    // 日期（在这里新增）
+    var year  = now.getFullYear();
+    var month = String(now.getMonth() + 1).padStart(2, '0'); // 月份从0开始所以+1
+    var day   = String(now.getDate()).padStart(2, '0');
+    document.getElementById('date').innerText = year + '-' + month + '-' + day;
+    }
+    updateClock();              // 页面加载时立刻执行一次
+    setInterval(updateClock, 1000);  // 之后每隔 1000 毫秒（1秒）执行一次
+  </script>
+
+</body>

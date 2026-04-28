@@ -1,0 +1,89 @@
+/* ===== 页面整体 ===== */
+body {
+  background-color: #e8f4fc;
+  margin: 0;
+  padding: 40px;
+  font-family: "微软雅黑", sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  /* 背景图片（替换成你的图片路径） */
+  background-image: url('https://wallpaperaccess.com/full/11100005.png');
+  background-size: cover; 
+  background-attachment: fixed;
+}
+
+/* ===== 内容卡片的整体容器 ===== */
+.about-container {
+  max-width: 720px;
+  margin: 0 auto;           /* 水平居中 */
+}
+
+/* ===== 标题 ===== */
+.about-title {
+  text-align: center;
+  color: #2a7ab8;
+  font-size: 1.5rem;
+  margin: 0 0 8px 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #b0d4ee;
+  margin-bottom: 24px;
+}
+
+/* ===== 每个内容卡片 ===== */
+.about-card {
+  background-color: rgba(255, 255, 255, 0.85);  /* 半透明白色，加背景图后透出图片 */
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* 悬停上移，和其他页面保持一致 */
+.about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== 卡片内标题 ===== */
+.about-card h3 {
+  color: #2a7ab8;
+  font-size: 1.1rem;
+  margin: 0 0 12px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #b0d4ee;   /* 标题下方一条蓝色细线 */
+}
+
+/* ===== 正文段落 ===== */
+.about-card p {
+  color: #444;
+  line-height: 1.8;
+  margin: 0 0 10px 0;
+}
+
+/* ===== 列表 ===== */
+.about-card ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.about-card li {
+  color: #444;
+  line-height: 2;         /* 行间距宽松，易于阅读 */
+}
+
+.about-card li strong {
+  color: #2a7ab8;         /* 关键词用蓝色高亮 */
+}
+
+/* ===== 底部署名 ===== */
+.about-footer {
+  text-align: center;
+  color: #888;
+  font-size: 0.85rem;
+  margin-top: 10px;
+}

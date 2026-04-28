@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h3 class="login-title">用户登录</h3>
+        <hr>
+        
+        <form id="loginForm">
+            <table>
+                <tr>
+                    <td>用户名：</td>
+                    <td><input type="text" name="username" id="username" placeholder="请输入用户名" required></td>
+                </tr>
+                <tr>
+                    <td>密码：</td>
+                    <td><input type="password" name="password" id="password" placeholder="请输入密码" required></td>
+                </tr>
+                
+                <!-- 错误提示 -->
+                <tr>
+                    <td colspan="2">
+                        <div id="errorTip" style="color:red; display:none; text-align:center;"></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="bt" colspan="2">
+                        <button type="submit" class="submit-btn">登录</button>
+                        <button type="reset" class="reset-btn">重置</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center">
+                        <a href="register.html">没有账号？去注册</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+<script>
+// 监听表单提交
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // 阻止默认提交
+
+    let username = document.getElementById('username').value.trim();
+    let password = document.getElementById('password').value.trim();
+    let errorTip = document.getElementById('errorTip');
+
+    // 修复：从localStorage读取注册的用户数据（替代原fetch读取txt）
+    let users = JSON.parse(localStorage.getItem('users') || '[]');
+    // 查找匹配的账号密码
+    let found = users.some(user => user.username === username && user.password === password);
+
+    if (found) {
+        // 登录成功
+        localStorage.setItem('isLogin', 'true');
+        alert('登录成功！即将进入个人blog');
+        window.location.href = '../website/son/self-blog.html';
+    } else {
+        // 账号或密码错误
+        errorTip.innerText = '用户名或密码错误，请重试！';
+        errorTip.style.display = 'block';
+    }
+});
+</script>
+</body>
+</html>

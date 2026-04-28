@@ -1,0 +1,146 @@
+/* 页面整体背景和布局 */
+body {
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 40px;
+  background-image: url('../images/上海.jpg');
+  background-size: cover;       /* 图片铺满整个屏幕 */
+  background-attachment: fixed; /* 滚动页面时背景不动，有视差感 */
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+/* 让四个卡片横向排列 */
+main {
+  display: flex;        /* 开启弹性布局，子元素自动横向排列 */
+  gap: 20px;            /* 卡片之间的间距 */
+  flex: 1;
+}
+
+/* 四个卡片的公共样式 */
+main > div {
+  flex: 1;              /* 每个卡片平均分配宽度 */
+  height: 400px;
+
+  /* 圆角边框 */
+  border-radius: 16px;
+
+  /* 背景图设置（替换 url 里的路径即可换图） */
+  background-image: url("../image/上海.jpg");
+  background-size: cover;       /* 图片铺满整个卡片 */
+  background-position: center;  /* 图片居中显示 */
+
+  /* 文字居中 */
+  display: flex;
+  align-items: flex-end;        /* 标题靠底部 */
+  justify-content: center;
+
+  /* 阴影，让卡片看起来有立体感 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  /* 鼠标悬停时的过渡动画 */
+  transition: transform 0.3s;
+}
+
+/* 鼠标悬停时卡片向上移动一点 */
+main > div:hover {
+  transform: translateY(-6px);
+}
+
+/* 卡片标题文字 */
+main > div h2 {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.45); /* 半透明黑色背景，让文字更好看 */
+  width: 100%;
+  text-align: center;
+  padding: 12px 0;
+  margin: 0;
+  border-radius: 16px;          /* 只有底部两个角是圆的 */
+  font-size: 1.1rem;
+}
+
+/* 链接去掉下划线 */
+main > div a {
+  text-decoration: none;
+  color: white;
+}
+
+/* -------- 各卡片的背景图（分别替换成自己的图片路径） -------- */
+.section-resume {
+  background-image: url('../images/haiou.jpg');
+}
+
+.section-dream {
+  background-image: url('../images/高铁.jpg');
+}
+
+.section-life {
+  background-image: url('../images/南京（桥）.jpg');
+}
+
+.section-self-blog {
+  background-image: url('../images/电脑.jpg');
+}
+
+/* 手机屏幕时改为竖向排列 */
+@media (max-width: 600px) {
+  main {
+    flex-direction: column;
+  }
+}
+footer {
+  background-color:rgba(0, 0, 0, 0.45);
+  color: white;
+  text-align: center;
+  padding: 14px;
+  font-size: 0.85rem;
+}
+
+#pay {
+  position: fixed;        /* 固定在屏幕上，不随滚动移动 */
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 220px;
+
+  background-color: rgba(42, 122, 184, 0.75);
+  border-radius: 12px 0 0 12px;   /* 只有左侧两个角是圆的 */
+  padding: 12px 8px;
+  cursor: pointer;         /*鼠标移上去时显示手型，提示用户可以点击*/
+  z-index: 999;           /* 保证浮在最上层 */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition: all 0.3s;
+}
+
+/* 默认只显示文字 */
+.pay-text {
+  color: white;
+  font-size: 1rem;
+  writing-mode: vertical-lr;   /* 文字竖向排列 */
+  letter-spacing: 0.2em;
+}
+
+/* 默认隐藏图片 */
+.pay-img {
+  width: 160px;
+  height: 200px;
+  object-fit: cover;    /*按比例缩放，裁剪多余部分，铺满盒子*/
+  border-radius: 8px;
+  display: none;           /* 默认隐藏 */
+  margin-top: 8px;
+}
+
+/* 悬停时显示图片，隐藏文字 */
+#pay:hover .pay-text {
+  display: none; /*完全隐藏，从页面中消失，不占任何空间：*/
+}
+
+#pay:hover .pay-img {
+  display: block; /*显示元素，独占一行，正常占据空间*/
+}

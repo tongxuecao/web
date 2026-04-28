@@ -1,0 +1,71 @@
+/* ===== 页面整体 ===== */
+body {
+  background-color: #e8f4fc;
+  margin: 0;
+  padding: 30px 40px;
+  font-family: "微软雅黑", sans-serif;
+  background-image: url(../../images/照片墙背景.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* ===== 标题 ===== */
+.page-title {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin: 0 0 8px 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #b0d4ee;
+  margin-bottom: 20px;
+}
+
+/* ===== 照片墙容器 ===== */
+.photo-wall {
+  position: relative;    /* 让子元素可以使用 absolute 定位 */
+  width: 100%;
+  height: 720px;         /* 给足够的高度放下所有照片 */
+}
+
+/* ===== 每张照片卡片 ===== */
+.photo-card {
+  position: absolute;    /* 绝对定位，配合 top/left 放在指定位置 */
+  width: 180px;          /* 照片宽度 */
+
+  /* 白色边框，像冲印出来的照片 */
+  background-color: white;
+  padding: 8px 8px 24px 8px;   /* 下方留多一点，像老照片底部 */
+  border-radius: 4px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+
+  /* 过渡动画：悬停时平滑放大 */
+  transition: transform 0.3s, box-shadow 0.3s, z-index 0s;
+
+  /* 默认层级，照片会互相叠压 */
+  z-index: 1;
+
+  cursor: pointer;
+}
+
+/* ===== 图片本身 ===== */
+.photo-card img {
+  width: 100%;           /* 图片填满卡片 */
+  height: 140px;
+  object-fit: cover;     /* 图片按比例裁剪，不变形 */
+  display: block;
+}
+
+/* ===== 鼠标悬停效果 ===== */
+.photo-card:hover {
+  /* 放大 1.6 倍，并且取消旋转角度让照片正向展示 */
+  transform: scale(1.6) rotate(0deg) !important;
+
+  /* 悬停的照片浮到最上层，不被其他照片遮住 */
+  z-index: 100;
+
+  /* 阴影加深，有悬浮感 */
+  box-shadow: 6px 12px 30px rgba(0, 0, 0, 0.35);
+}
